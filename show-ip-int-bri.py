@@ -36,7 +36,7 @@ command = ["\n","show ip int bri","show run int lo99"]
 for device in (r1, r2, r3):
     net_connect = ConnectHandler(**device)
     result = net_connect.send_multiline_timing(command)
-    #Optional --> print(net_connect.find_prompt())
+    # Optional --> print(net_connect.find_prompt())
     print()
     print(result)
     print ("\n","================================")

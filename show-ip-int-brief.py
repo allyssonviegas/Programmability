@@ -1,6 +1,6 @@
-#
-# Test Script for reference only
-#
+# Show IP Interface Brief
+# Test Script for reference
+
 from netmiko import ConnectHandler
 from getpass import getpass
 
@@ -36,8 +36,8 @@ command = ["\n","show ip int bri","show run int lo99"]
 for device in (r1, r2, r3):
     net_connect = ConnectHandler(**device)
     result = net_connect.send_multiline_timing(command)
-    # Optional --> print(net_connect.find_prompt())
+    hostname = (net_connect.find_prompt())
     print()
-    print(result)
-    print ("\n","================================")
+    print("=========    " + hostname + "    =========   " + "\n" + result)
+    print ()
     net_connect.disconnect()

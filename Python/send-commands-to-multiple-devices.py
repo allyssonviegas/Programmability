@@ -1,13 +1,17 @@
 # Send commands to Multiple Devices from devices file
 from netmiko import ConnectHandler
 
+from getpass import getpass
+
+password = getpass()
+
 with open('devices.txt') as routers:
     for IP in routers:
         Router = {
             'device_type': 'cisco_ios',
             'ip': IP,
             'username': 'ansible',
-            'password': 'cisco'
+            'password': password,
         }
 
         net_connect = ConnectHandler(**Router)

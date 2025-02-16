@@ -3,6 +3,7 @@ from netmiko import ConnectHandler
 
 from getpass import getpass
 
+# Test password: cisco
 password = getpass()
 
 with open('devices.txt') as routers:

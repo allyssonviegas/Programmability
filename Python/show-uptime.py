@@ -8,7 +8,7 @@ routers = ["192.168.0.1","192.168.0.2","192.168.0.3"]
 threads =[]
 
 def mytask(ip):
-    net_connect = ConnectHandler(device_type="cisco_ios", host=ip, username="ansible", password="cisco")
+    net_connect = ConnectHandler(device_type="cisco_ios", host=ip, username="allysson", password="cisco")
     result = net_connect.send_command("show ver | inc uptime")
     print(result)
 

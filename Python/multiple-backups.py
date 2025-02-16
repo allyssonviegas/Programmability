@@ -18,16 +18,12 @@ with open('devices.txt') as routers:
         print ("Backing up " + device)
 
         filename = '/home/user/Programmability/Python/backups/' + device + '.txt'
-        # to save backup to same folder as script use below line and comment out above line 
         # filename = device + '.txt' 
 
         showrun = net_connect.send_command('show run')
-        # showvlan = net_connect.send_command('show vlan')
-        # showver = net_connect.send_command('show ver')
+        showver = net_connect.send_command('show ver')
         log_file = open(filename, "a")   # in append mode
         log_file.write(showrun)
-        log_file.write("\n")
-        log_file.write(showvlan)
         log_file.write("\n")
         log_file.write(showver)
         log_file.write("\n")
@@ -36,5 +32,3 @@ with open('devices.txt') as routers:
 net_connect.disconnect()
 
 
-
-# ~/Programmability/Python/backups$

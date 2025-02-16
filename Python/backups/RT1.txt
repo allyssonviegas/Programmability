@@ -1,0 +1,318 @@
+Building configuration...
+
+Current configuration : 6725 bytes
+!
+! Last configuration change at 21:54:20 UTC Sun Feb 9 2025 by ansible
+!
+version 17.3
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service call-home
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname RT1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+logging buffered 8192 informational
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip domain name lab.com
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-1247610836
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-1247610836
+ revocation-check none
+ rsakeypair TP-self-signed-1247610836
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+!
+crypto pki certificate chain TP-self-signed-1247610836
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 31323437 36313038 3336301E 170D3235 30323035 30303236 
+  30365A17 0D333530 32303530 30323630 365A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D31 32343736 
+  31303833 36308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100C927 C3DEE359 542D6EEB 1336EE41 1D845AC2 EA47316B 5E1AB782 
+  BB3E9D92 A42FC111 00E30BF9 B66CB150 7D32B0A0 EE111D85 B8441879 89D82721 
+  91413374 3A066219 9300FAE9 99122B96 0CAC3176 51EAAF6B 56B48B55 99E0D9F9 
+  65B51E06 D6AE0F20 A64DEA43 A31C33EE 9B5B5E48 EDCAFA8F 949B9F69 76E6A4AA 
+  AB681A2E 2C248C21 851F42E9 DA6BD29B 14354813 8F2B7E51 DE584D34 778C75AD 
+  19D2768F 6A2CAA0F 9CE10EC7 40954058 A55059FC 9C8BBEA1 E092DAF1 9F03A764 
+  D976E6FF C8128173 DB4466BC 0381C06A 6075EFA2 27923775 9D88CCE0 49A16645 
+  0B7401E9 21A3BC4A 5403EED1 23F3A635 3353ED47 BE2C5AA0 B8D2FC1D 145CBC43 
+  BB76687A 4DFB0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 143456AB 8ACDA83F 1001420C 1DD7211A E2E2643E 
+  98301D06 03551D0E 04160414 3456AB8A CDA83F10 01420C1D D7211AE2 E2643E98 
+  300D0609 2A864886 F70D0101 05050003 82010100 3D27E8EE C2C29CC9 7FA74DFE 
+  920D3FDA F3DB571C 3B523C79 F7A056FA DD0F9876 0C7D8DB4 DBDDD0A1 E8620CC7 
+  EF1FCAF1 540D3CC0 82F96D26 8B2CB09D ED9C84C9 C7651C4D 82B2894E 6CBCB937 
+  AD13297D 66F8A5AE A4101697 D86F227F 00782AD7 574E7112 0D98B14A 7B77685B 
+  682DC3D9 260D855A 3750F58D ADA10041 F0375936 F28D6E4D 78F4B8DC 506D46A8 
+  EDF1FC5D 73C7D68D D7B4579B 0555D971 E278F78C 4B95A405 33CD854A B7E30800 
+  BE16C6DB B42DADF3 99CFBF30 4B899339 1122A134 60752001 33A4344E 6C70DEDB 
+  8BEB3164 44CA56D5 28191157 9C354603 8B14505D 828CBF87 3E33F3D8 FE3175E6 
+  ACC80F92 17237847 0836BFA4 C5608894 470DFEAE
+  	quit
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030 
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363 
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934 
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305 
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720 
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D 
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520 
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE 
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC 
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188 
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7 
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191 
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44 
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201 
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85 
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500 
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905 
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B 
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8 
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C 
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B 
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678 
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB 
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0 
+  D697DF7F 28
+  	quit
+!
+license udi pid CSR1000V sn 9KTOHQJGCSA
+diagnostic bootup level minimal
+memory free low-watermark processor 71477
+!
+!
+spanning-tree extend system-id
+!
+username ansible privilege 15 secret 9 $9$hUa1z4xHhR6uMU$9wC9VTVHfEJNpjLIHQ0HjSsSr.tnRp4rVQkMtd5Gkk.
+username viegas privilege 15 secret 9 $9$biOK7PfHYla15k$bbfXmjdIB6aqlw6ikjqBtSJ4ZMgJTF4d0O1LZEADU.2
+username ccie privilege 15 secret 9 $9$fDczqpA92dzO6U$E9ByDtku31AuMTEc7NdEfzrm8izo4.j6e83SB2bghnE
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback0
+ description Mgmt Interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface Loopback99
+ ip address 99.0.0.1 255.255.255.0
+!
+interface GigabitEthernet1
+ ip address 192.168.0.1 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ description Mgmt Interface
+ ip address 10.0.0.1 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet3
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+!
+ip ssh version 2
+!
+!
+logging source-interface Loopback99
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 14
+ login local
+ transport input ssh
+line vty 15
+ password cisco
+ login local
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+ntp source Loopback99
+ntp server 99.0.0.100
+!
+!
+!
+!
+!
+end
+
+Cisco IOS XE Software, Version 17.03.05
+Cisco IOS Software [Amsterdam], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 17.3.5, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2022 by Cisco Systems, Inc.
+Compiled Wed 09-Feb-22 10:35 by mcpre
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2022 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: IOS-XE ROMMON
+
+RT1 uptime is 1 week, 4 days, 3 hours, 52 minutes
+Uptime for this control processor is 1 week, 4 days, 3 hours, 54 minutes
+System returned to ROM by reload at 10:21:32 UTC Wed Feb 5 2025
+System image file is "bootflash:packages.conf"
+Last reload reason: Reload Command
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+License Level: ax
+License Type: N/A(Smart License Enabled)
+Next reload license Level: ax
+
+The current throughput level is 1000 kbps 
+
+
+Smart Licensing Status: UNREGISTERED/No Licenses in Use
+
+cisco CSR1000V (VXE) processor (revision VXE) with 2071712K/3075K bytes of memory.
+Processor board ID 9KTOHQJGCSA
+Router operating mode: Autonomous
+4 Gigabit Ethernet interfaces
+32768K bytes of non-volatile configuration memory.
+3978416K bytes of physical memory.
+6188032K bytes of virtual hard disk at bootflash:.
+
+Configuration register is 0x2102
+
